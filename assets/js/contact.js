@@ -10,8 +10,8 @@ saveBtn.addEventListener("click", function () {
     };
     // create a vcard file
     var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
-    // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nORG" + contact.org + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` +  "\nTEL;TYPE=work,voice:" + contact.phone  + "\nEMAIL:" + contact.email + "\nEND:VCARD";
-    var blob = new Blob([vcard], { type: "text/vcard" });
+    // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nORG:" + contact.org + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` +  "\nTEL;TYPE=work,voice:" + contact.phone  + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+    var blob = new Blob([vcard], { type: "application/vcard" });
     var url = URL.createObjectURL(blob);
 
     const newLink = document.createElement('a');
