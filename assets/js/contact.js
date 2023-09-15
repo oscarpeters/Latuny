@@ -5,6 +5,7 @@ saveBtn.addEventListener("click", function (event) {
     var contact = {
         name: "Patrick Latuny",
         nickname: "Patrick",
+        lastname: "Latuny",
         phone: "0652334084",
         email: "patrick@latunyservices.nl",
         org: "Latuny Services",
@@ -16,7 +17,7 @@ saveBtn.addEventListener("click", function (event) {
     };
     // create a vcard file
     // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
-    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nNICKNAME:" + contact.nickname + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nTITLE:" + contact.title + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nORG:Google;GMail" + "\nURL:" + contact.url + "\nEND:VCARD";
+    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nN:Latuny;Patrick" + "\nNICKNAME:" + contact.nickname + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nTITLE:" + contact.title + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nORG:Latuny Services" + "\nURL:" + contact.url + "\nEND:VCARD";
     var blob = new Blob([vcard], { type: "text/vcard" });
     var url = URL.createObjectURL(blob);
 
@@ -41,7 +42,7 @@ saveBtnMain.addEventListener("click", function (event) {
     };
     // create a vcard file
     // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
-    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nNICKNAME:" + contact.nickname + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nTITLE:" + contact.title + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nORG:Google;GMail" + "\nURL:" + contact.url + "\nEND:VCARD";
+    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nN:Latuny;Patrick"+ "\nNICKNAME:" + contact.nickname + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nTITLE:" + contact.title + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nORG:Latuny Services" + "\nURL:" + contact.url + "\nEND:VCARD";
     var blob = new Blob([vcard], { type: "text/vcard" });
     var url = URL.createObjectURL(blob);
 
