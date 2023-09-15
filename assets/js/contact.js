@@ -56,4 +56,3 @@ saveBtnMain.addEventListener("click", function (event) {
 
 
 
-var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nNICKNAME:" + contact.nickname + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nTITLE:" + contact.title + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nORG:Latuny Services" + "\nURL:" + contact.url + "\nEND:VCARD";
