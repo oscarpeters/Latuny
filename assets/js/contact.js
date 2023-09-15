@@ -8,7 +8,7 @@ saveBtn.addEventListener("click", function (event) {
         phone: "0652334084",
         email: "patrick@latunyservices.nl",
         org: "Latuny Services",
-        img: "assets/images/pasfoto.jpeg",
+        img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fnl.linkedin.com%2Fin%2Fpatrick-latuny-66b915150&psig=AOvVaw2_rESSwgnnQUq-wvqN9uUd&ust=1694859649422000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPCD5ayyrIEDFQAAAAAdAAAAABAE",
         logo: "assets/images/latunyservices-logo.png",
         url: "https://latunyservices.nl",
         title: "Millieudeskundige"
@@ -56,3 +56,4 @@ saveBtnMain.addEventListener("click", function (event) {
 
 
 
+var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nNICKNAME:" + contact.nickname + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nTITLE:" + contact.title + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nORG:Latuny Services" + "\nURL:" + contact.url + "\nEND:VCARD";
