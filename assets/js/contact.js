@@ -1,3 +1,5 @@
+'use strict';
+
 var saveBtn = document.getElementById("save-btn");
 saveBtn.addEventListener("click", function () {
     // Get the contact information from the website
