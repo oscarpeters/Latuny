@@ -14,7 +14,7 @@ saveBtn.addEventListener("click", function (event) {
     };
     // create a vcard file
     // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
-    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nTEL;TYPE=work,voice:" + contact.phone  + "\nEMAIL:" + contact.email + "\nURL:" + contact.url +"\nEND:VCARD";
+    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nURL:" + contact.url + "\nORG:Google;GMail" + "\nEND:VCARD";
     var blob = new Blob([vcard], { type: "text/vcard" });
     var url = URL.createObjectURL(blob);
 
@@ -39,7 +39,7 @@ saveBtnMain.addEventListener("click", function (event) {
     };
     // create a vcard file
     // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
-    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nURL:" + contact.url + "\nEND:VCARD";
+    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nURL:" + contact.url + "\nORG:Google;GMail" + "\nEND:VCARD";
     var blob = new Blob([vcard], { type: "text/vcard" });
     var url = URL.createObjectURL(blob);
 
