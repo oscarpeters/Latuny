@@ -1,5 +1,6 @@
 var saveBtn = document.getElementById("save-btn");
-saveBtn.addEventListener("click", function () {
+saveBtn.addEventListener("click", function (event) {
+    event.preventDefault();
     // Get the contact information from the website
     var contact = {
         name: "Patrick Latuny",
@@ -23,7 +24,8 @@ saveBtn.addEventListener("click", function () {
 });
 
 var saveBtn = document.getElementById("save-btn-main");
-saveBtn.addEventListener("click", function () {
+saveBtn.addEventListener("click", function (event) {
+    event.preventDefault();
     // Get the contact information from the website
     var contact = {
         name: "John Smith",
