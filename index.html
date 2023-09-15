@@ -179,7 +179,7 @@
                 <a href=""><i class="lab la-instagram"></i></a>
             </li> -->
         <a href="#" class="theme-btn" id="save-btn">
-            <i class="las la-paperclip"></i>Contactgegevens Toevoegen
+            <i class="las la-paperclip"></i>Contactgegevens
         </a>
         </ul>
         <a href="#" class="theme-btn">
@@ -190,7 +190,7 @@
     <main class="drake-main">
         <div id="smooth-wrapper">
             <div id="smooth-content">
-
+            
                 <div class="left-sidebar">
                     <div class="sidebar-header d-flex align-items-center justify-content-between">
                         <img src="./assets/images/latunyservices-logo.png" alt="Logo">
@@ -216,10 +216,34 @@
                         <li>
                             <a href=""><i class="lab la-github"></i></a>
                         </li> -->
-                        <button id="save-btn">Save Contact</button>
-                    <a class="theme-btn" id="save-btn">
-                        <i class="las la-paperclip"></i> Contactgegevens Toevoegen
+                    <a href="#" class="theme-btn" id="save-btn">
+                        <i class="las la-paperclip"></i>Contactgegevens
                     </a>
+                    <script>
+                        var saveBtn = document.getElementById("save-btn");
+                            saveBtn.addEventListener("click", function () {
+                                // Get the contact information from the website
+                                var contact = {
+                                    name: "Patrick Latuny",
+                                    phone: "0652334084",
+                                    email: "patrick@latunyservices.nl",
+                                    org: "Latuny Services",
+                                    img: "./assets/images/pasfoto.jpeg"
+                                };
+                                // create a vcard file
+                                var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+                                // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nORG:" + contact.org + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` +  "\nTEL;TYPE=work,voice:" + contact.phone  + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+                                var blob = new Blob([vcard], { type: "text/vcard" });
+                                var url = URL.createObjectURL(blob);
+
+                                const newLink = document.createElement('a');
+                                newLink.download = contact.name + ".vcf";
+                                newLink.textContent = contact.name;
+                                newLink.href = url;
+
+                                newLink.click();
+                            });
+                    </script>
                     </ul>
                     <a href="mailto:patrick@latunyservices.nl" class="theme-btn">
                         <i class="las la-envelope"></i> Mail
