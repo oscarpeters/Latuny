@@ -4,6 +4,7 @@ saveBtn.addEventListener("click", function (event) {
     // Get the contact information from the website
     var contact = {
         name: "Patrick Latuny",
+        nickname: "Patrick",
         phone: "0652334084",
         email: "patrick@latunyservices.nl",
         org: "Latuny Services",
@@ -15,7 +16,7 @@ saveBtn.addEventListener("click", function (event) {
     };
     // create a vcard file
     // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
-    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nURL:" + contact.url + "\nORG:Google;GMail" + "\nTITLE:" + contact.title +"\nEND:VCARD";
+    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nNICKNAME:" + contact.nickname + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nTITLE:" + contact.title + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nORG:Google;GMail" + "\nURL:" + contact.url + "\nEND:VCARD";
     var blob = new Blob([vcard], { type: "text/vcard" });
     var url = URL.createObjectURL(blob);
 
@@ -40,7 +41,7 @@ saveBtnMain.addEventListener("click", function (event) {
     };
     // create a vcard file
     // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
-    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nURL:" + contact.url + "\nORG:Google;GMail" + "\nTITLE:" + contact.title + "\nEND:VCARD";
+    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nNICKNAME:" + contact.nickname + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nTITLE:" + contact.title + `\nLOGO;MEDIATYPE=image/png:${contact.logo}` + "\nORG:Google;GMail" + "\nURL:" + contact.url + "\nEND:VCARD";
     var blob = new Blob([vcard], { type: "text/vcard" });
     var url = URL.createObjectURL(blob);
 
@@ -51,3 +52,7 @@ saveBtnMain.addEventListener("click", function (event) {
 
     newLink.click();
 });
+
+
+
+
