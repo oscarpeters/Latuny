@@ -2153,3 +2153,35 @@ body .body-overlay {
         opacity: 0;
     }
 }
+
+.gradient-text_Happy {
+    font-size: 12;
+    font-weight: bold;
+    background-color: #12c2e9;
+    background: linear-gradient(to right, #0e92af, #c471ed, #f64f59);
+    /* Set the background size and repeat properties. */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: Shine 4s ease-in-out infinite alternate;
+}
+
+@keyframes happy {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+@keyframes Shine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
