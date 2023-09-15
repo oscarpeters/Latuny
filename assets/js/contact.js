@@ -23,8 +23,8 @@ saveBtn.addEventListener("click", function (event) {
     newLink.click();
 });
 
-var saveBtn = document.getElementById("save-btn-main");
-saveBtn.addEventListener("click", function (event) {
+var saveBtnMain = document.getElementById("save-btn-main");
+saveBtnMain.addEventListener("click", function (event) {
     event.preventDefault();
     // Get the contact information from the website
     var contact = {
