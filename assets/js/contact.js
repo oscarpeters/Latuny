@@ -1,28 +1,23 @@
-var express = require('express');
-var router = express.Router();
+var saveBtn = document.getElementById("save-btn");
+saveBtn.addEventListener("click", function () {
+    // Get the contact information from the website
+    var contact = {
+        name: "Patrick Latuny",
+        phone: "0652334084",
+        email: "patrick@latunyservices.nl",
+        org: "Latuny Services",
+        img: "./assets/images/pasfoto.jpeg"
+    };
+    // create a vcard file
+    var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+    // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nORG:" + contact.org + `\nPHOTO;TYPE=JPEG;ENCODING=b:[${contact.img}]` +  "\nTEL;TYPE=work,voice:" + contact.phone  + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+    var blob = new Blob([vcard], { type: "text/vcard" });
+    var url = URL.createObjectURL(blob);
 
-module.exports = function (app) {
-    app.use('/', router);
-};
+    const newLink = document.createElement('a');
+    newLink.download = contact.name + ".vcf";
+    newLink.textContent = contact.name;
+    newLink.href = url;
 
-router.get('/', function (req, res, next) {
-
-    var vCardsJS = require('vcards-js');
-
-    //create a new vCard
-    vCard = vCardsJS();
-
-    //set properties
-    vCard.photo.embedFromFile('./assets/images/latunyservices-logo.png');
-    vCard.firstName = 'Eric';
-    vCard.middleName = 'J';
-    vCard.lastName = 'Nesser';
-    vCard.organization = 'ACME Corporation';
-
-    //set content-type and disposition including desired filename
-    res.set('Content-Type', 'text/vcard; name="enesser.vcf"');
-    res.set('Content-Disposition', 'inline; filename="enesser.vcf"');
-
-    //send the response
-    res.send(vCard.getFormattedString());
+    newLink.click();
 });
