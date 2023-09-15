@@ -12,7 +12,7 @@ saveBtn.addEventListener("click", function (event) {
         img: "https://raw.githubusercontent.com/oscarpeters/Latuny/main/assets/images/1557829345391.jpeg",
         logo: "https://raw.githubusercontent.com/oscarpeters/Latuny/main/assets/images/1557829345391.jpeg",
         url: "https://latunyservices.nl",
-        title: "Millieudeskundige",
+        title: "Millieukundige",
         };
     // create a vcard file
     // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
@@ -34,10 +34,15 @@ saveBtnMain.addEventListener("click", function (event) {
     // Get the contact information from the website
     var contact = {
         name: "Patrick Latuny",
+        nickname: "Patrick",
+        lastname: "Latuny",
         phone: "0652334084",
         email: "patrick@latunyservices.nl",
         org: "Latuny Services",
-        img: "assets/images/pasfoto.jpeg"
+        img: "https://raw.githubusercontent.com/oscarpeters/Latuny/main/assets/images/1557829345391.jpeg",
+        logo: "https://raw.githubusercontent.com/oscarpeters/Latuny/main/assets/images/1557829345391.jpeg",
+        url: "https://latunyservices.nl",
+        title: "Millieukundige",
     };
     // create a vcard file
     // var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
