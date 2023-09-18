@@ -128,7 +128,7 @@ ul {
     width: 100%;
     height: 100%;
     z-index: 10000;
-    background: #000;
+    background: #000; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,7 +151,29 @@ ul {
     transform-origin: 50%;
     animation: bounceLoader 500ms alternate infinite ease;
 }
-
+.page-loader .propeller {
+    animation-name: spin;
+    animation-duration: .3s;      
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    display: block;
+  
+    &:nth-child(1) { animation-delay: .06s;   }
+    &:nth-child(2) { animation-delay: .1s;  }
+    &:nth-child(3) { animation-delay: .25s;   }
+    &:nth-child(4) { animation-delay: .15s;   }
+    
+    &--cw {
+      animation-direction: normal;    
+    }
+    
+    &--ccw {
+      animation-direction: reverse;
+    }
+  }
+  
 
 /* Icon Menu */
 .icon-menu {
@@ -2271,4 +2293,112 @@ body .body-overlay {
     .popup{
       width: 70%;
     }
+  }
+  svg {
+    display: block;
+    height: 200px;
+    width: 200px;
+    fill: white;
+    width: 33%; 
+  }
+  
+  .propeller {
+    animation-name: spin;
+    animation-duration: .3s;      
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    display: block;
+  
+    &:nth-child(1) { animation-delay: .06s;   }
+    &:nth-child(2) { animation-delay: .1s;  }
+    &:nth-child(3) { animation-delay: .25s;   }
+    &:nth-child(4) { animation-delay: .15s;   }
+    
+    &--cw {
+      animation-direction: normal;    
+    }
+    
+    &--ccw {
+      animation-direction: reverse;
+    }
+  }
+  
+  
+  
+  #drone {
+    transition: transform 1s ease-in-out;
+    &:hover {
+      transform: rotateX(60deg) rotateZ(30deg) scale(1.5) translateZ(10px);
+      transform-origin: 50% 50%;
+    }
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg); 
+    }
+    to {
+      transform: rotate(360deg); 
+    }
+  }
+  
+  
+  .drone-front {
+    animation-name: bounce;
+    animation-direction: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(10px) rotate(-2deg) scale(1); 
+    }
+    50% {
+      transform: translateY(-10px) rotate(0deg) scale(0.95); 
+    }
+    to {
+      transform: translateY(10px) rotate(2deg) scale(1.05); 
+    }
+  }
+  
+  .beam {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    &--1 { animation-name: inout1; }
+    &--2 { animation-name: inout2; }
+  }
+  
+  .zaps {
+    animation-name: inout3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  
+  
+  @keyframes inout1 {
+    0%    { opacity: 0; }
+    5%    { opacity: 0; }
+    30%   { opacity: 1; }
+    80%   { opacity: 1; }
+    95%   { opacity: 0; }
+    100%  { opacity: 0; }
+  }
+  @keyframes inout2 {
+    0%    { opacity: 0; }
+    15%   { opacity: 0; }
+    40%   { opacity: 1; }
+    60%   { opacity: 1; }
+    85%   { opacity: 0; }
+    100%  { opacity: 0; }
+  }
+  @keyframes inout3 {
+    0%    { opacity: 0; }
+    25%   { opacity: 0; }
+    50%   { opacity: 1; }
+    75%   { opacity: 0; }
+    100%  { opacity: 0; }
   }
